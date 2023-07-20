@@ -72,6 +72,21 @@
         "disponibile":"magazzino",
         "saldo":60
        
+      },
+
+      {
+        "id": 6,
+        "codprod":6171,
+        "collezione":"allSeason",
+        "capo":"cappelo di Mario",
+        "modello":3000,
+        "quantita":1,
+        "colore":"rosso",
+        "prezzoivaesclusa":978,
+        "prezzoivainclusa":999,
+        "disponibile":"Regno Dei Funghi",
+        "saldo":0
+       
       }
     
   ]

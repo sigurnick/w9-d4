@@ -25,12 +25,12 @@ class capoAbbigliamento {
         this.saldo = saldo;
     }
     getsaldocapo() {
-        let result = (this.prezzoivainclusa * this.saldo) / 100;
-        return parseFloat(result.toFixed(2)); //toFixed(2) converte un numero in stringa che abbia massimo 2 cifre decimali
+        let sconto = (this.prezzoivainclusa * this.saldo) / 100;
+        return parseFloat(sconto.toFixed(2)); //toFixed(2) converte un numero in stringa che abbia massimo 2 cifre decimali
     }
     getacquistocapo() {
-        let result = this.prezzoivainclusa - this.getsaldocapo();
-        return parseFloat(result.toFixed(2));
+        let costo = this.prezzoivainclusa - this.getsaldocapo();
+        return parseFloat(costo.toFixed(2));
     }
 }
 const getCapo = function () {
@@ -52,8 +52,8 @@ const getCapo = function () {
         });
         console.log(arrayCapi);
         arrayCapi.forEach((e) => {
-            console.log(`-Lo sconto sul capo ${e.capo}, di colore ${e.colore} è di: ${e.getsaldocapo()}€ (${e.saldo}%). Il prezzo finale dell' articolo è di: ${e.getacquistocapo()}€.`);
-            console.log('------------------------------------------------------');
+            console.log(`-Lo sconto sul capo ${e.capo}, di colore ${e.colore} è di: ${e.getsaldocapo()}€ (${e.saldo}%). Il prezzo finale dell' articolo è di: ${e.getacquistocapo()}€. Sono disponibili ${e.quantita} pezzi in ${e.disponibile}`);
+            console.log('==============================================================');
         });
     })
         .catch((err) => {

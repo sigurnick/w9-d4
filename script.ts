@@ -26,13 +26,13 @@ class capoAbbigliamento {
   }
 
   getsaldocapo(): number {
-    let result: number = (this.prezzoivainclusa * this.saldo) / 100;
-    return parseFloat(result.toFixed(2)); //toFixed(2) converte un numero in stringa che abbia massimo 2 cifre decimali
+    let sconto: number = (this.prezzoivainclusa * this.saldo) / 100;
+    return parseFloat(sconto.toFixed(2)); //toFixed(2) converte un numero in stringa che abbia massimo 2 cifre decimali
   }
 
   getacquistocapo(): number {
-    let result: number = this.prezzoivainclusa - this.getsaldocapo();
-    return parseFloat(result.toFixed(2));
+    let costo: number = this.prezzoivainclusa - this.getsaldocapo();
+    return parseFloat(costo.toFixed(2));
   }
 }
 
@@ -76,9 +76,10 @@ const getCapo = function () {
         console.log(
           `-Lo sconto sul capo ${e.capo}, di colore ${
             e.colore
-          } è di: ${e.getsaldocapo()}€ (${e.saldo}%). Il prezzo finale dell' articolo è di: ${e.getacquistocapo()}€.`
+          } è di: ${e.getsaldocapo()}€ (${e.saldo}%). Il prezzo finale dell' articolo è di: ${e.getacquistocapo()}€. Sono disponibili ${e.quantita} pezzi in ${e.disponibile}`
         );
-        console.log('------------------------------------------------------');
+        console.log('==============================================================');
+
         
       });
     })
